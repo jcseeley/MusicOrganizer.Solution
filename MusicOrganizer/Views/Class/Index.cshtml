@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";
+}
+
+
+@using MusicOrganizer.Models;
+
+<h1>Class List</h1>
+@if (Model.Count == 0)
+{
+  <p>There are no objects on the list.</p>
+}
+<ul>
+  @foreach (Record album in Model)
+  {
+    <li><a href='/records/@album.Id'>@object.Description</a></li>
+  }
+</ul>
+
+<a href="/class/new">Add a new item.</a>
+
+<form action="/class/delete" method="post">
+  <button type="submit" name="button">Clear All Objects</button>
+</form>
