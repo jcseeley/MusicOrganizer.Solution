@@ -7,7 +7,7 @@ namespace MusicOrganizer.Models
     public string Name { get; }
     public Artist(string name)
     {
-      Name = "no";
+      Name = name;
     }
   }
 }
