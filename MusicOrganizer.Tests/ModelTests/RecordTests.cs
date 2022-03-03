@@ -57,6 +57,17 @@ namespace MusicOrganizer.Tests
       int result = newRecord.Id;
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void FindId_ReturnsCorrectRecord_Record()
+    {
+      string album = "test";
+      string album2 = "test2";
+      Record newRecord = new Record(album);
+      Record newRecord2 = new Record(album2);
+      Record result = Record.Find(2);
+      Assert.AreEqual(newRecord2, result);
+    }
   }
 }
 
