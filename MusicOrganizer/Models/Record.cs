@@ -5,11 +5,13 @@ namespace MusicOrganizer.Models
   public class Record
   {
     public string AlbumTitle { get; }
+    public int Id { get; }
     private static List<Record> _instances = new List<Record> {};
     public Record(string albumTitle)
     {
       AlbumTitle = albumTitle;
       _instances.Add(this);
+      Id = 5;
     }
 
     public static List<Record> GetAll()
