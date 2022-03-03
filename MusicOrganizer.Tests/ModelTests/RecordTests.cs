@@ -12,10 +12,11 @@ namespace MusicOrganizer.Tests
     [TestMethod]
     public void RecordConstructor_CreatesInstanceOfRecord_Object()
     {
-      Record newRecord = new Record();
+      Record newRecord = new Record("test");
       Assert.AreEqual(typeof(Record), newRecord.GetType());
     }
 
+    [TestMethod]
     public void GetAlbumTitle_ReturnsAlbumTitle_String()
     {
       string newAlbum = "Test";
