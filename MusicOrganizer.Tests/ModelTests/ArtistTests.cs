@@ -11,17 +11,26 @@ namespace MusicOrganizer.Models
     [TestMethod]
     public void ArtistConstructor_CreatesArtistObject_Object()
     {
-      Artist newArtist = new Artist("test");
+      Artist newArtist = new Artist("Artist");
       Assert.AreEqual(typeof(Artist),newArtist.GetType());
     }
 
     [TestMethod]
     public void GetName_ReturnsName_String()
     {
-      string name = "Test Artist";
+      string name = "Artist";
       Artist newArtist = new Artist(name);
       string result = newArtist.Name;
       Assert.AreEqual(name, result);
+    }
+
+    [TestMethod]
+    public void GetId_ReturnsArtistId_Int()
+    {
+      string name = "Artist";
+      Artist newArtist = new Artist(name);
+      int result = newArtist.Id;
+      Assert.AreEqual(1, result);
     }
   }
 }
