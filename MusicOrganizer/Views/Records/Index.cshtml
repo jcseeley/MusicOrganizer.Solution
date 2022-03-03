@@ -1,0 +1,25 @@
+@{
+  Layout = "_Layout";
+}
+
+
+@using MusicOrganizer.Models;
+
+<h1>Record List</h1>
+@if (Model.Count == 0)
+{
+  <p>There are no records in your collection.</p>
+}
+<ul>
+  @foreach (Record album in Model)
+  {
+    <li><a href='/records/@album.Id'>@album.AlbumTitle</a></li>
+  }
+</ul>
+
+<a href="/records/new">Add New Record</a><br>
+<a href="/">Back to Home</a>
+
+<form action="/records/delete" method="post">
+  <button type="submit" name="button">Remove All Records</button>
+</form>
