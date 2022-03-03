@@ -6,8 +6,13 @@ using System.Collections.Generic;
 namespace MusicOrganizer.Models
 {
   [TestClass]
-  public class ArtistTests
+  public class ArtistTests : IDisposable
   {
+    public void Dispose()
+    {
+      Artist.ClearAll();
+    }
+    
     [TestMethod]
     public void ArtistConstructor_CreatesArtistObject_Object()
     {
