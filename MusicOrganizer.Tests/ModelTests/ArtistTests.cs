@@ -12,7 +12,7 @@ namespace MusicOrganizer.Models
     {
       Artist.ClearAll();
     }
-    
+
     [TestMethod]
     public void ArtistConstructor_CreatesArtistObject_Object()
     {
@@ -36,6 +36,18 @@ namespace MusicOrganizer.Models
       Artist newArtist = new Artist(name);
       int result = newArtist.Id;
       Assert.AreEqual(1, result);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsAllArtistObjects_ArtistList()
+    {
+      string name = "Artist";
+      string name1 = "Artist1";
+      Artist newArtist = new Artist(name);
+      Artist newArtist2 = new Artist(name1);
+      List<Artist> newList = new List<Artist> { newArtist, newArtist2 };
+      List<Artist> result = Artist.GetAll();
+      CollectionAssert.AreEqual(newList, result);
     }
   }
 }
