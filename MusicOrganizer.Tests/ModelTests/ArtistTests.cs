@@ -49,6 +49,18 @@ namespace MusicOrganizer.Models
       List<Artist> result = Artist.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectArtist_Artist()
+    {
+      string name = "Artist";
+      string name1 = "Artist1";
+      Artist newArtist = new Artist(name);
+      Artist newArtist2 = new Artist(name1);
+      List<Artist> newList = new List<Artist> { newArtist, newArtist2 };
+      Artist result = Artist.Find(2);
+      Assert.AreEqual(newArtist2, result);
+    }
   }
 }
 
