@@ -4,7 +4,7 @@ namespace MusicOrganizer.Models
 {
   public class Record
   {
-    public string AlbumTitle { get; }
+    public string AlbumTitle { get; set; }
     public int Id { get; }
     private static List<Record> _instances = new List<Record> {};
     public Record(string albumTitle)

@@ -36,7 +36,7 @@ namespace MusicOrganizer
 
       app.Run(async (context) =>
       {
-        await context.Response.WriteAsync("Well that didn't work...");
+        // await context.Response.WriteAsync(" ");
       });
     }
   }

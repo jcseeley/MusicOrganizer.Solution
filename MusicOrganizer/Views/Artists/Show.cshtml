@@ -1,0 +1,30 @@
+@{
+  Layout = "_Layout";
+}
+
+@using MusicOrganizer.Models;
+
+<h1>@Model["artist"].Name</h1>
+<h2>Description: @Model["artist"].Name</h2>
+
+<h2>Records:</h2>
+
+@if (Model["records"].Count == 0)
+{
+  <h3>There are no records to display.</h3>
+} 
+
+@if (Model["records"].Count >= 1)
+{
+  @foreach (Record record in @Model["records"])
+  {
+    <a href='/artists/@Model["artist"].Id/records/@record.Id'>@record.AlbumTitle</a><br>
+  }
+}
+
+<a href='/artists/@Model["artist"].Id/records/new'><button>Add Record</button></a>
+<form action='/artists/delete' method="post">
+  <input id="id" name="id" type="hidden" value='@Model["artist"].Id'>
+  <button type="submit">Delete Artist</button>
+</form>
+<a href='/artists'>Return To Artists List</a>

@@ -3,11 +3,11 @@
 }
 
 <h1>Add A record</h1>
-<form action="/records" method="post">
-  <label for="record">Record Title</label>
-  <input id="record" name="record" type="text">
+<form action='/artists/@Model.Id/' method="post">
+  <input id="artistId" name="artistId" type="hidden" value="@Model.Id">
+  <label for="recordDescription">Record Title</label>
+  <input id="recordDescription" name="recordDescription" type="text">
   <button type="submit">Add</button>
 </form>
 
-<p><a href="/">Back To Home</a></p>
-<p><a href="/records">Back To List of Records</a></p>
+<p><a href="/artists">Back To Artists</a></p>
