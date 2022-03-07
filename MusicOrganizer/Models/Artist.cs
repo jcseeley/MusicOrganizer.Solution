@@ -64,7 +64,7 @@ namespace MusicOrganizer.Models
       conn.Open();
       MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
 
-      cmd.CommandText = "INSERT INTO Artists (description) VALUES (@Name);";
+      cmd.CommandText = "INSERT INTO Artists (name) VALUES (@Name);";
       MySqlParameter param = new MySqlParameter();
       param.ParameterName = "@Name";
       param.Value = this.Name;
