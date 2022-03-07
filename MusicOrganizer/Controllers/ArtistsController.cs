@@ -24,6 +24,7 @@ namespace MusicOrganizer.Controllers
     public ActionResult Create(string artistName)
     {
       Artist newArtist = new Artist(artistName);
+      newArtist.Save();
       return RedirectToAction("Index");
     }
 
@@ -44,6 +45,7 @@ namespace MusicOrganizer.Controllers
       Dictionary<string, object> model = new Dictionary<string, object>();
       Artist foundArtist = Artist.Find(artistId);
       Record newRecord = new Record(recordDescription);
+      newRecord.Save();
       foundArtist.AddRecord(newRecord);
       List<Record> artistRecords = foundArtist.Records;
       model.Add("records", artistRecords);
